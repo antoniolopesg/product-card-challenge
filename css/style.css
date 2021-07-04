@@ -1,0 +1,432 @@
+:root {
+  --dodger-blue: #2175F5;
+  --sunset-orange: #F84848;
+  --jungle-green: #29B864;
+  --orange: #FF5521;
+  --tundora: #444444;
+  --gallery: #EFEFEF;
+  --white: #FFFFFF;
+  --emperor: #555555;
+  --mine-shaft: #3A3A3A;
+  --alto: #DADADA;
+  --black: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  min-height: 100vh;
+
+  font-family: 'Poppins', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+}
+
+@keyframes jumping {
+  from {
+    transform: translateY(0) rotate(-20deg);
+  }
+  
+  to {
+    transform: translateY(-10px) rotate(-20deg);
+  }
+}
+
+@keyframes fillingIn {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.color-transition {
+  transition: background-color 0.4s;
+}
+
+.page {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+}
+
+.page__container {
+  max-width: 863px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.container__sneakers {
+  box-shadow: 1px 1px 75px rgba(100, 100, 100, 0.6);
+  position: relative;
+
+  flex: 1;
+
+  height: 440px;
+}
+
+.sneakers__nike {
+  width: 75px;
+
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1;
+}
+
+.sneakers__image {
+  position: relative;
+  z-index: 3;
+  margin: 0 auto;
+}
+
+.sneakers__share {
+  height: 35px;
+  width: 35px;
+
+  border-radius: 50%;
+  z-index: 1;
+
+  background-color: var(--white);
+
+  position: absolute;
+
+  top: 1rem;
+  right: 1rem;
+
+  text-decoration: none;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.sneakers_bg-trasition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--sunset-orange);
+}
+
+.sneakers_bg-trasition.animate {
+  animation: fillingIn 1s;
+}
+
+.share__icon {
+  width: 13px;
+  transition: color 0.4s;
+}
+
+.info__section + div {
+  margin-top: 0.5rem;
+}
+
+.info__section::after {
+  content: '';
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  height: 1px;
+  background-color: var(--alto);
+}
+
+.container__info .info__section:last-child::after {
+  content: unset;
+}
+
+.container__info {
+  background-color: var(--white);
+  box-shadow: 1px 1px 75px rgba(100, 100, 100, 0.6);
+  padding: 1.5rem;
+
+  flex: 1;
+}
+
+.header__sneakers-name-container {
+  display: flex;
+  align-items: center;
+}
+
+.sneakers-name__title {
+  color: var(--tundora);
+  font-size: 1.3rem;
+}
+
+.body__sneakers-description {
+  color: var(--tundora);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.sneakers-name__new {
+  background-color: var(--dodger-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.6rem;
+  color: var(--white);
+  border-radius: 5px;
+  padding: 3px 10px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.header__title {
+  color: var(--mine-shaft);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.body__info {
+  color: var(--emperor);
+  font-size: 0.9rem;
+}
+
+.body__colors-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  padding: 0.7rem 0.2rem;
+}
+
+.colors-container__button {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: var(--emperor);
+
+  border: 2px solid transparent;
+}
+
+.colors-container__button-blue {
+  background-color: var(--dodger-blue);
+}
+
+.colors-container__button-red {
+  background-color: var(--sunset-orange);
+}
+
+.colors-container__button-green {
+  background-color: var(--jungle-green);
+}
+
+.colors-container__button-orange {
+  background-color: var(--orange);
+}
+
+.colors-container__button-black {
+  background-color: var(--tundora);
+}
+
+.body__sizes-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  padding: 0.7rem 0.2rem;
+}
+
+.sizes-container__button {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 6px;
+
+  font-weight: 600;
+  font-size: 0.9rem;
+
+  display: block;
+  background-color: var(--gallery);
+
+  color: var(--black);
+}
+
+.sizes-container__button-selected {
+  background-color: var(--dodger-blue);
+  color: var(--gallery);
+  
+}
+
+.body__buy-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  flex-wrap: wrap-reverse;
+}
+
+.buy-container__add-cart-btn {
+  text-decoration: none;
+  color: var(--white);
+  text-transform: uppercase;
+
+  display: block;
+  background-color: var(--jungle-green);
+
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.buy-container__price {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--tundora);
+  position: relative;
+}
+
+.buy-container__price::before {
+  content: '$';
+  font-size: 1rem;
+  position: absolute;
+  top: 2px;
+  right: 100%;
+}
+
+@media screen and (min-width: 500px) {
+  .container__info {
+    padding: 2rem 2.5rem;
+  }
+
+  .sneakers-name__title {
+    font-size: 2rem;
+  }
+
+  .body__sneakers-description {
+    font-size: 1.2rem;
+  }
+
+  .header__title {
+    font-size: 1.2rem;
+  }
+  
+  .body__info {
+    font-size: 1.1rem;
+  }
+
+  .sizes-container__button {
+    height: 40px;
+    width: 40px;
+    font-size: 1.2rem;
+  }
+
+  .body__colors-container, .body__sizes-container {
+    justify-content: start;
+  }
+
+  .colors-container__button, .sizes-container__button {
+    margin: 0 0.8rem;
+  }
+
+  .buy-container__price {
+    font-size: 2.1rem;
+  }
+
+  .sneakers__nike-text {
+    font-size: 15rem;
+  }
+
+  .sneakers__share {
+    height: 45px;
+    width: 45px;
+  }
+
+  .share__icon {
+    width: 18px;
+  }
+
+  .sneakers__nike {
+    width: 100px;
+    top: 1.5rem;
+  }
+
+  .buy-container__add-cart-btn {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .page__container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .sneakers__image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: unset;
+    width: 140%;
+    animation: jumping 1s ease 0s infinite alternate-reverse;
+  }
+
+  .sneakers__nike-text {
+    font-size: 11rem;
+  }
+}
+
+.blue {
+  background-color: var(--dodger-blue);
+}
+
+.red {
+  background-color: var(--sunset-orange);
+}
+
+.green {
+  background-color: var(--jungle-green);
+}
+
+.orange {
+  background-color: var(--orange);
+}
+
+.black {
+  background-color: var(--tundora);
+}
+
+.blue-text {
+  color: var(--dodger-blue);
+}
+
+.red-text {
+  color: var(--sunset-orange);
+}
+
+.green-text {
+  color: var(--jungle-green);
+}
+
+.orange-text {
+  color: var(--orange);
+}
+
+.black-text {
+  color: var(--tundora);
+}
